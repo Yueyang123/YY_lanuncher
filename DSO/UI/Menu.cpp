@@ -4,6 +4,8 @@
 #include <QDebug>
 #include <unistd.h>
 #include <sys/types.h>
+#include <QFileDialog>
+#include <QMessageBox>
 Menu::Menu(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Menu)
@@ -24,18 +26,6 @@ Menu::~Menu()
     delete clock;
 }
 
-void Menu::Reshow()
-{
-    this->show();
-}
-
-void Menu::on_camera_bt_clicked()
-{
-    camerawin = new CameraWin();//新建子界面
-    connect(camerawin,SIGNAL(camera_quit()),this,SLOT(Reshow()));//当点击子界面时，调用主界面的reshow()函数
-    camerawin->show();//子界面出现
-    this->hide();//主界面关闭
-}
 
 bool Menu::eventFilter(QObject *watch, QEvent *evn)
 {
@@ -79,19 +69,50 @@ void Menu::page_change()
     ui->stackedWidget->setCurrentIndex(nIndex);
 }
 
+void Menu::Reshow()
+{
+    this->show();
+}
 
+void Menu::on_camera_bt_clicked()
+{
+    camerawin = new CameraWin();//新建子界面
+    connect(camerawin,SIGNAL(camera_quit()),this,SLOT(Reshow()));//当点击子界面时，调用主界面的reshow()函数
+    camerawin->show();//子界面出现
+    this->hide();//主界面关闭
+}
 void Menu::on_picture_bt_clicked()
 {
-
+    picture = new Picture();//新建子界面
+    connect(picture,SIGNAL(pic_quit()),this,SLOT(Reshow()));//当点击子界面时，调用主界面的reshow()函数
+    picture->show();//子界面出现
+    this->hide();//主界面关闭
 }
 
 void Menu::on_net_bt_clicked()
 {
-    pid_t pid;
-    pid=fork();
-    if(pid==0)
-    {
-        execl("./Camera","Camera");
-    }
 
+}
+
+void Menu::on_contol_bt_clicked()
+{
+    iocon = new IoCon();//新建子界面
+    connect(iocon,SIGNAL(io_quit()),this,SLOT(Reshow()));//当点击子界面时，调用主界面的reshow()函数
+    iocon->show();//子界面出现
+    this->hide();//主界面关闭
+}
+
+void Menu::on_file_bt_clicked()
+{
+    QFileDialog* fd = new QFileDialog(this);//创建对话框
+    fd->setDirectory("/usr/picture");
+    fd->resize(480,250);    //设置显示的大小
+    if ( fd->exec() == QDialog::Accepted )   //如果成功的执行
+    {
+    QStringList fileName0 = fd->selectedFiles();      //返回文件列表的名称
+    QString fileName = fileName0[0];            //取第一个文件名
+    }
+    QMessageBox::information(this,
+                            tr("Do not support"),
+                            tr("Do not support!"));
 }

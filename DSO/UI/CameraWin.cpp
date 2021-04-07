@@ -10,6 +10,7 @@
 #include <sys/types.h>
 #include <dirent.h>
 #include <sys/stat.h>
+#include <QTextCodec>
 #define WIDTH   640
 #define HEIGHT  480
 
@@ -21,7 +22,6 @@ CameraWin::CameraWin(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowFlags(Qt::FramelessWindowHint);
-
     image=new unsigned char[WIDTH*HEIGHT*2];
     rgbbuf=new unsigned char [WIDTH*HEIGHT*3];
     timer =new QTimer();
@@ -60,8 +60,8 @@ void CameraWin::GrabWidgetScreen()
 {
     QRect rect = ui->label->geometry();
     QPixmap pix ,bmp;
-    pix =bmp.grabWindow(QApplication::desktop()->winId(),0,0,frameGeometry().width(),frameGeometry().height());
-    QString filePathName = "widget";
+    pix =bmp.grabWindow(QApplication::desktop()->winId(),10,40,461,221);
+    QString filePathName = "/usr/picture/widget";
     filePathName += QDateTime::currentDateTime().toString("yyyy-MM-dd hh-mm-ss-zzz");
     filePathName += ".bmp";
     if(!pix.save(filePathName,"BMP"))

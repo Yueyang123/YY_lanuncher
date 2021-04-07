@@ -16,16 +16,22 @@ SOURCES += main.cpp\
         UI/Menu.cpp \
     UI/DigiClock.cpp \
     UI/CameraWin.cpp \
-    Service/Camera.cpp
+    Service/Camera.cpp \
+    UI/Picture.cpp \
+    UI/IoCon.cpp
 
 HEADERS  += UI/Menu.h \
     UI/DigiClock.h \
     UI/CameraWin.h \
-    Service/Camera.h
+    Service/Camera.h \
+    UI/Picture.h \
+    UI/IoCon.h
 
 FORMS    += \
     UI/Menu.ui \
-    UI/CameraWin.ui
+    UI/CameraWin.ui \
+    UI/Picture.ui \
+    UI/IoCon.ui
 
 RESOURCES += \
     UI/Res/Res.qrc

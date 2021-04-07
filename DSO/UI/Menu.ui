@@ -73,7 +73,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>CON</string>
+         <string>GPIO</string>
         </property>
        </widget>
       </item>

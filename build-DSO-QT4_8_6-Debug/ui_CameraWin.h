@@ -59,10 +59,10 @@ public:
     void retranslateUi(QWidget *CameraWin)
     {
         CameraWin->setWindowTitle(QApplication::translate("CameraWin", "Form", 0, QApplication::UnicodeUTF8));
-        quit_Bt->setText(QApplication::translate("CameraWin", "Quit", 0, QApplication::UnicodeUTF8));
+        quit_Bt->setText(QApplication::translate("CameraWin", "QUIT", 0, QApplication::UnicodeUTF8));
         label->setText(QApplication::translate("CameraWin", "CameraWIn", 0, QApplication::UnicodeUTF8));
         save_Bt->setText(QApplication::translate("CameraWin", "SAVE", 0, QApplication::UnicodeUTF8));
-        start_Bt->setText(QApplication::translate("CameraWin", "STATRT", 0, QApplication::UnicodeUTF8));
+        start_Bt->setText(QApplication::translate("CameraWin", "START", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

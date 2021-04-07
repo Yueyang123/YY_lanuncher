@@ -128,7 +128,7 @@ public:
     {
         Menu->setWindowTitle(QApplication::translate("Menu", "Form", 0, QApplication::UnicodeUTF8));
         file_bt->setText(QApplication::translate("Menu", "FILE", 0, QApplication::UnicodeUTF8));
-        contol_bt->setText(QApplication::translate("Menu", "CON", 0, QApplication::UnicodeUTF8));
+        contol_bt->setText(QApplication::translate("Menu", "GPIO", 0, QApplication::UnicodeUTF8));
         camera_bt->setText(QApplication::translate("Menu", "Camera", 0, QApplication::UnicodeUTF8));
         adc_bt->setText(QApplication::translate("Menu", "ADC", 0, QApplication::UnicodeUTF8));
         picture_bt->setText(QApplication::translate("Menu", "PICTURE", 0, QApplication::UnicodeUTF8));

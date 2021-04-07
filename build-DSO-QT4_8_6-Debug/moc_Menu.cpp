@@ -22,7 +22,7 @@ static const uint qt_meta_data_Menu[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       5,   14, // methods
+       7,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -35,6 +35,8 @@ static const uint qt_meta_data_Menu[] = {
       53,   43,   38,    5, 0x0a,
       83,    5,    5,    5, 0x08,
      107,    5,    5,    5, 0x08,
+     127,    5,    5,    5, 0x08,
+     150,    5,    5,    5, 0x08,
 
        0        // eod
 };
@@ -43,6 +45,7 @@ static const char qt_meta_stringdata_Menu[] = {
     "Menu\0\0on_camera_bt_clicked()\0Reshow()\0"
     "bool\0watch,evn\0eventFilter(QObject*,QEvent*)\0"
     "on_picture_bt_clicked()\0on_net_bt_clicked()\0"
+    "on_contol_bt_clicked()\0on_file_bt_clicked()\0"
 };
 
 void Menu::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -57,6 +60,8 @@ void Menu::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void *
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
         case 3: _t->on_picture_bt_clicked(); break;
         case 4: _t->on_net_bt_clicked(); break;
+        case 5: _t->on_contol_bt_clicked(); break;
+        case 6: _t->on_file_bt_clicked(); break;
         default: ;
         }
     }
@@ -94,9 +99,9 @@ int Menu::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 5)
+        if (_id < 7)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 5;
+        _id -= 7;
     }
     return _id;
 }
